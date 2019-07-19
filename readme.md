@@ -20,10 +20,7 @@ Trello Link
 
 
 ## Wireframes
-![Users](https://balsamiq.cloud/sk6r8ym/p54m7x2/rAECC)
-![VProducts](https://balsamiq.cloud/sk6r8ym/p54m7x2/r00D2)
-![Viewing products as user](https://balsamiq.cloud/sk6r8ym/p54m7x2/rB6E0)
-![Form] (https://balsamiq.cloud/sk6r8ym/p54m7x2/rD73A)
+![All]()
 
 
 ## Future enhancements:
