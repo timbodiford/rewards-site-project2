@@ -1,31 +1,37 @@
-# mern-template-project
+# Rewards Website
 
-# Setup A New Project From This Template
-
-If you are starting a new project do the following:
-
-1. copy/download this directory to where you new project is located and rename
-   it to the name of your project.
-1. change your directory (`cd`) into the copied project template
-1. `npm install`
-1. `npm run dev`
-1. Open a new browser window and navigate to the URL http://localhost:3000/
-    here you should see `hello world` displayed after page load
-    updates should show up here automatically
-1. see the `client/src` `readme.md` file for more information on the react project
-
-# Setup A New Project Without This Template
-
-If you want to start a project without using this template directory do the
-following:
+SEI 22 Project 3 
 
 
-1. `mkdir <project-name>`
-1. `cd <project-name>`
-1. `echo "# <project-name>" > readme.md`
-1. `git init`
-1. `git add readme.md `
-1. `git commit -m "init repo with readme.md"`
-1. `npm init`
-1. `mkdir models views controllers`
-1. `touch ./server.js`
+Heroku Link
+  * TBD
+  
+Trello Link
+  * https://trello.com/b/ATArBDD4/rewards-site-project-3
+  
+ Personal Github Link
+  * https://github.com/timbodiford/rewards-site-project2
+
+## App description
+  * TBD
+
+## ERD
+![ERD](https://www.lucidchart.com/documents/edit/1646d4e7-67b8-4bac-840a-9e0b083c873a/0?beaconFlowId=1CB1EDDB1558069F)
+
+
+## Wireframes
+![Users](https://balsamiq.cloud/sk6r8ym/p54m7x2/rAECC)
+![VProducts](https://balsamiq.cloud/sk6r8ym/p54m7x2/r00D2)
+![Viewing products as user](https://balsamiq.cloud/sk6r8ym/p54m7x2/rB6E0)
+![Form] (https://balsamiq.cloud/sk6r8ym/p54m7x2/rD73A)
+
+
+## Future enhancements:
+TBD
+  
+
+
+## Technology used
+TBD
+
+
