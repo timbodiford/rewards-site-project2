@@ -16,7 +16,7 @@ Trello Link
   * TBD
 
 ## ERD
-![ERD](https://www.lucidchart.com/documents/edit/1646d4e7-67b8-4bac-840a-9e0b083c873a/0?beaconFlowId=1CB1EDDB1558069F)
+![ERD](https://www.lucidchart.com/publicSegments/view/e686bd43-56bb-4259-83fe-219b2b02325f/image.jpeg)
 
 
 ## Wireframes
