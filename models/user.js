@@ -70,6 +70,10 @@ function updateUser(userId, updatedUser) {
   return UserCollection.findByIdAndUpdate(userId, updatedUser, {new: true})
 }
 
+function deleteUser(userId) {
+  return UserCollection.findByIdAndDelete(userId)
+}
+
 
 
 /* Step 5
@@ -81,5 +85,6 @@ module.exports = {
 getAllUsers,
 getUser,
 createUser, 
-updateUser
+updateUser,
+deleteUser
 }
