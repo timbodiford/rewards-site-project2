@@ -30,8 +30,7 @@ const ProductSchema = new mongoose.Schema({
   productDescription: String,
   pointsRequired: String,
   productImage: {
-    link: String,
-    default: "https://picsum.photos/200"
+    type: String,
   },
   category: String,
 })
