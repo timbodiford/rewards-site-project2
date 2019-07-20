@@ -68,7 +68,7 @@ productRouter.put('/:productId', (req, res) => {
 })
 
 productRouter.delete('/:productId', (req, res) => {
-  productApi.deletePRoduct(req.params.productId)
+  productApi.deleteProduct(req.params.productId)
   .then((product) => {
     res.json(product)
   })
