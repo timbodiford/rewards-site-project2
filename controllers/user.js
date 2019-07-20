@@ -53,6 +53,15 @@ userRouter.get('/:userId', (req, res) => {
   })
 })
 
+userRouter.post('/', (req, res) => {
+  userApi.createUser(req.body)
+  .then((user) => {
+    res.json(user)
+  })
+})
+
+
+
 /* Step 6
  *
  * Export the router from the file.

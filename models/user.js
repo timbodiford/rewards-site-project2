@@ -62,6 +62,12 @@ function getUser(userId) {
   return UserCollection.findById(userId)
 }
 
+  function createUser(userObject) {
+  return UserCollection.create(userObject)
+}
+
+
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -69,5 +75,6 @@ function getUser(userId) {
  */
 module.exports = {
 getAllUsers,
-getUser
+getUser,
+createUser
 }
