@@ -66,6 +66,10 @@ function getUser(userId) {
   return UserCollection.create(userObject)
 }
 
+function updateUser(userId, updatedUser) {
+  return UserCollection.findByIdAndUpdate(userId, updatedUser, {new: true})
+}
+
 
 
 /* Step 5
@@ -76,5 +80,6 @@ function getUser(userId) {
 module.exports = {
 getAllUsers,
 getUser,
-createUser
+createUser, 
+updateUser
 }
