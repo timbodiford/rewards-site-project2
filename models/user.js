@@ -29,10 +29,7 @@ const UserSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  isAdmin: {
-    type: Boolean,
-    default: false
-  },
+  isAdmin: Boolean,
   pointsBalance: Number,
   userName: String,
   address: String,
@@ -62,12 +59,12 @@ function getUser(userId) {
   return UserCollection.findById(userId)
 }
 
-  function createUser(userObject) {
+function createUser(userObject) {
   return UserCollection.create(userObject)
 }
 
 function updateUser(userId, updatedUser) {
-  return UserCollection.findByIdAndUpdate(userId, updatedUser, {new: true})
+  return UserCollection.findByIdAndUpdate(userId, updatedUser, { new: true })
 }
 
 function deleteUser(userId) {
@@ -82,9 +79,9 @@ function deleteUser(userId) {
  * object
  */
 module.exports = {
-getAllUsers,
-getUser,
-createUser, 
-updateUser,
-deleteUser
+  getAllUsers,
+  getUser,
+  createUser,
+  updateUser,
+  deleteUser
 }

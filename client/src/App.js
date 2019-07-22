@@ -1,14 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import HelloWorld from './components/HelloWorld.js'
+import Users from './components/Users'
 import './App.css';
+import Header from './components/Header';
+import SingleUser from './components/SingleUser';
 
 function App() {
   return (
     <div className="App">
+      <Header />
+    
       <Router>
         <Switch>
-          <Route exact path="/" component={HelloWorld}/>
+          <Route exact path="/" component={Users} />
+          <Route path="/users/:userId" compnent={SingleUser} />
         </Switch>
       </Router>
     </div>

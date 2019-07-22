@@ -15,7 +15,10 @@ export default class HelloWorld extends Component {
     *
     */
     state = {
-        message: ''
+        users: [],
+        newUser: {
+            
+        }
     }
 
     /* Step 4
