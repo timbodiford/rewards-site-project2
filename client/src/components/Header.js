@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import { Redirect, Router, Switch, Link } from 'react-router-dom'
+
 
 export default class Header extends Component {
     render() {
         return (
-            <h1>
+            <div>
                 This will be the Header
-            </h1>
+                <Link to={'/'}>Users</Link>
+
+                <Link to={'/products'}>Products</Link>
+            </div>
         )
     }
 }

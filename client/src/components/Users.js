@@ -29,7 +29,8 @@ export default class users extends Component {
             city: '',
             state: '',
             zip: ''
-        }
+        },
+        isCreateFormDisplayed: false
 
     }
 
@@ -52,6 +53,13 @@ getAllUsers() {
         })
 }
 
+handleToggleCreateForm =() => {
+    this.setState((state) => {
+        return { isCreateFormDisplayed: !state.isCreateFormDisplayed }
+    })
+
+}
+
 /* Step 5
 *  The render function manages what is shown in the browser
 *  TODO: delete the jsx returned
@@ -63,10 +71,19 @@ render() {
         return <Link key={user._id} to={`/users/${user._id}`}>{`${user.firstName} ${user.lastName}`}</Link>
     })
     return (
+
+        this.state.isCreateFormDisplayed
+            ?
+        <p>I'll put a form here</p>
+        
+        :
+
         <div>
             {/* Accessing the value of message from the state object */}
             <div>{usersList}</div>
             Test
+
+            <button onClick={this.handleToggleCreateForm}>Add User</button>
 
         </div>
     )

@@ -44,7 +44,7 @@ userRouter.get('/', (req, res) => {
 })
 
 userRouter.get('/:userId', (req, res) => {
-  userApi.getAllUsers(req.params.userId)
+  userApi.getUser(req.params.userId)
   .then((user)=> {
     res.json(user)
   }) 
