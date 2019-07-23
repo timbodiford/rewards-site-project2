@@ -198,7 +198,6 @@ export default class users extends Component {
                         <input type="submit" value="Add User" />
 
                     </form>
-                    <p>I'll put a form here</p>
                     <button onClick={this.handleToggleCreateForm}>Cancel</button>
                 </div>
                 :
