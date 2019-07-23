@@ -10,6 +10,10 @@ export default class SingleProduct extends Component {
     }
 
     componentDidMount() {
+        this.getAllProducts()
+    }
+
+    getAllProducts() {
         axios.get(`/api/products/${this.props.match.params.productId}`)
             .then((res) => {
                 this.setState({ product: res.data })
@@ -42,11 +46,19 @@ export default class SingleProduct extends Component {
         this.setState({ product: copiedProduct })
     }
 
+    handleDelete = () => {
+        axios.delete(`/api/products/${this.state.product._id}`)
+        .then(() => {
+            this.setState({redirectToHome: true})
+
+        })
+    }
+
 
 
     render() {
         if (this.state.redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to='/api/products' />
 
         }
         return (
@@ -112,6 +124,7 @@ export default class SingleProduct extends Component {
                     <img src={this.state.product.productImage} width='150' alt='img'></img>
 
                     <button onClick={this.handleToggleEditForm}>Edit Product</button>
+                    <button onClick={this.handleDelete}>Delete Product</button>
 
 
 

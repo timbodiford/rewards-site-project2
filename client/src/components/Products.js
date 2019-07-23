@@ -40,6 +40,7 @@ export default class Products extends Component {
         axios.post('/api/products', this.state.newProduct)
         .then((res) => {
             this.setState({ isCreateFormDisplayed: false})
+            this.getAllProducts()
         })
     }
 
@@ -117,7 +118,7 @@ export default class Products extends Component {
                             onChange={this.handleInputCreate}
                             value={this.state.newProduct.category}
                         />
-                        <input type="submit" value="Add User" />
+                        <input type="submit" value="Add Product" />
                     </form>
                     <button onClick={this.handleToggleCreateForm}>Cancel</button>
                 </div>

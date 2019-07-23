@@ -13,6 +13,10 @@ export default class SingleUser extends Component {
     }
 
     componentDidMount() {
+        this.getAllUsers()
+    }
+
+    getAllUsers() {
         axios.get(`/api/users/${this.props.match.params.userId}`)
             .then((res) => {
                 this.setState({ user: res.data })
