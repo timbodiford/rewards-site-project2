@@ -38,10 +38,10 @@ export default class Products extends Component {
         event.preventDefault()
 
         axios.post('/api/products', this.state.newProduct)
-        .then((res) => {
-            this.setState({ isCreateFormDisplayed: false})
-            this.getAllProducts()
-        })
+            .then((res) => {
+                this.setState({ isCreateFormDisplayed: false })
+                this.getAllProducts()
+            })
     }
 
     handleInputCreate = (event) => {
@@ -56,16 +56,23 @@ export default class Products extends Component {
     render() {
 
         let productsList = this.state.products.map((product) => {
-            return <Link 
-            key={product._id} 
-            to={`/products/${product._id}`}
-            >
-            {
-            <img src={product.productImage} width='150'></img>
-            // ${product.productName}
-            }
-            </Link>
+            return (
+                <div>
+                    <p>{product.productName}</p>
+                    <p>{product.pointsRequired} points</p>
+                    <Link
+                        key={product._id}
+                        to={`/products/${product._id}`}
+                    >   
+                        {
+                            <img src={product.productImage} width='150'></img>
+                            // ${product.productName}
+                        }
+                    </Link>
+                </div>
+            )
         })
+
 
 
         return (
@@ -127,7 +134,7 @@ export default class Products extends Component {
 
 
 
-                <div>{productsList}</div>
+                    <div>{productsList}</div>
 
                     <button onClick={this.handleToggleCreateForm}>Add New Product</button>
 

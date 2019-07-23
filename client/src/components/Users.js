@@ -75,7 +75,7 @@ export default class users extends Component {
         const copiedUser = { ...this.state.newUser }
         copiedUser[event.target.name] = event.target.value
 
-        this.setState({newUser: copiedUser })
+        this.setState({ newUser: copiedUser })
 
 
 
@@ -89,7 +89,12 @@ export default class users extends Component {
     */
     render() {
         let usersList = this.state.users.map((user) => {
-            return <Link key={user._id} to={`/users/${user._id}`}>{`${user.firstName} ${user.lastName}`}</Link>
+            return (
+                <div>
+                    <Link key={user._id} to={`/users/${user._id}`}>{`${user.firstName} ${user.lastName}`}</Link>
+                    <p>{user.pointsBalance} Available Points</p>
+                </div>
+            )
         })
         return (
 
@@ -193,9 +198,11 @@ export default class users extends Component {
                 </div>
                 :
                 <div>
-                    <div>{usersList}</div>
+                    <div>
+                        <h3>{usersList}</h3>
+                    </div>
 
-            <button onClick={this.handleToggleCreateForm}>Add User</button>
+                    <button onClick={this.handleToggleCreateForm}>Add User</button>
 
                 </div>
         )

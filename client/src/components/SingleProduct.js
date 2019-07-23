@@ -50,7 +50,7 @@ export default class SingleProduct extends Component {
         axios.delete(`/api/products/${this.state.product._id}`)
         .then(() => {
             this.setState({redirectToHome: true})
-
+            this.getAllProducts()
         })
     }
 
