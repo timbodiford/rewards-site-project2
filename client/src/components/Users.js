@@ -71,16 +71,7 @@ export default class users extends Component {
     }
 
     handleInputCreate = (event) => {
-        console.log(event.target.name)
-        console.log(event.target.lastName)
-        console.log(event.target.email)
-        console.log(event.target.isAdmin)
-        console.log(event.target.pointsBalance)
-        console.log(event.target.userName)
-        console.log(event.target.address)
-        console.log(event.target.city)
-        console.log(event.target.state)
-        console.log(event.target.zip)
+
         const copiedUser = { ...this.state.newUser }
         copiedUser[event.target.name] = event.target.value
 
@@ -202,9 +193,7 @@ export default class users extends Component {
                 </div>
                 :
                 <div>
-                    {/* Accessing the value of message from the state object */}
                     <div>{usersList}</div>
-                    Test
 
             <button onClick={this.handleToggleCreateForm}>Add User</button>
 

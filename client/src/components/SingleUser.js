@@ -7,7 +7,9 @@ export default class SingleUser extends Component {
 
     state = {
         user: {},
-        isEditFormDisplayed: false
+        isEditFormDisplayed: false,
+        redirectToHome: false
+
     }
 
     componentDidMount() {
@@ -42,6 +44,14 @@ export default class SingleUser extends Component {
         copiedUser[event.target.name] = event.target.value
 
         this.setState({ user: copiedUser})
+    }
+
+    handleDelete = () => {
+        axios.delete(`/api/users/${this.state.user._id}`)
+        .then(() => {
+            this.setState({redirectToHome: true})
+
+        })
     }
 
 
@@ -145,6 +155,7 @@ export default class SingleUser extends Component {
                         value={this.state.user.zip}
                     />
                     <input type="submit" value="Save Changes" />
+                    <button onClick={this.handleToggleEditForm}>Cancel</button>
 
                 </form>
 
@@ -158,6 +169,7 @@ export default class SingleUser extends Component {
                     <h5>{this.state.user.lastName}</h5>
 
                     <button onClick={this.handleToggleEditForm}>Edit User</button>
+                    <button onClick={this.handleDelete}>Delete User</button>
 
 
 

@@ -6,7 +6,7 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                This will be the Header
+                <p>Rewards Site</p>                
                 <Link to={'/'}>Users</Link>
 
                 <Link to={'/products'}>Products</Link>

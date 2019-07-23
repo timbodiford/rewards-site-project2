@@ -55,8 +55,18 @@ export default class Products extends Component {
     render() {
 
         let productsList = this.state.products.map((product) => {
-            return <Link key={product._id} to={`/products/${product._id}`}>{`${product.productName}`}</Link>
+            return <Link 
+            key={product._id} 
+            to={`/products/${product._id}`}
+            >
+            {
+            <img src={product.productImage} width='150'></img>
+            // ${product.productName}
+            }
+            </Link>
         })
+
+
         return (
             this.state.isCreateFormDisplayed
                 ?
@@ -113,16 +123,13 @@ export default class Products extends Component {
                 </div>
                 :
                 <div>
-                    This will be the products page
 
 
 
                 <div>{productsList}</div>
 
                     <button onClick={this.handleToggleCreateForm}>Add New Product</button>
-                    <Link to='/'>
-                        <button type="button">Back to Products</button>
-                    </Link>
+
                 </div>
         )
     }
