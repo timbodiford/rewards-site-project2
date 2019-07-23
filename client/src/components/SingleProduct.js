@@ -35,7 +35,7 @@ export default class SingleProduct extends Component {
 
 
 
-                <Link to='/'>
+                <Link to='/products'>
                     <button type="button">Back to Products</button>
                 </Link>
             </div>
