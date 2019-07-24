@@ -13,10 +13,10 @@ export default class SingleUser extends Component {
     }
 
     componentDidMount() {
-        this.getAllUsers()
+        this.getUser()
     }
 
-    getAllUsers() {
+    getUser() {
         axios.get(`/api/users/${this.props.match.params.userId}`)
             .then((res) => {
                 this.setState({ user: res.data })
@@ -175,7 +175,9 @@ export default class SingleUser extends Component {
                     <button onClick={this.handleToggleEditForm}>Edit User</button>
                     <button onClick={this.handleDelete}>Delete User</button>
 
-
+                    <Link to='/users/:userId/shop'>
+                        <button type="button">Shop</button>
+                    </Link>
 
 
 

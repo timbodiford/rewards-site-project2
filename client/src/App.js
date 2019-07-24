@@ -6,6 +6,7 @@ import Header from './components/Header';
 import SingleUser from './components/SingleUser';
 import Products from './components/Products'
 import SingleProduct from './components/SingleProduct'
+import ShopViewComponent from './components/ShopView'
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Users} />
-          <Route path="/users/:userId" component={SingleUser} />
+          <Route exact path="/users/:userId" component={SingleUser} />
+          <Route exact path='/users/:userId/shop' render={ShopViewComponent} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/products/:productId" component={SingleProduct} />
         </Switch>

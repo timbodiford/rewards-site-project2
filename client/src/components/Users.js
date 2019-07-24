@@ -4,6 +4,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import ShopView from './ShopView';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import SingleUser from './SingleUser';
+
 
 
 /* Step 2
@@ -30,7 +34,19 @@ export default class users extends Component {
             state: '',
             zip: ''
         },
-        isCreateFormDisplayed: false
+        currentUser: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            isAdmin: '',
+            pointsBalance: '',
+            userName: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: ''
+        },
+        isCreateFormDisplayed: false,
 
     }
 
@@ -43,7 +59,9 @@ export default class users extends Component {
     *   -REMINDER remember `setState` it is an async function
     */
     componentDidMount() {
+
         this.getAllUsers()
+
     }
 
     getAllUsers() {
@@ -52,6 +70,13 @@ export default class users extends Component {
                 this.setState({ users: res.data })
             })
     }
+    // getUser() {
+    //     axios.get(`/api/users/${this.props.match.params.userId}`)
+    //         .then((res) => {
+    //             this.setState({ user: res.data })
+    //         })
+    //     console.log(this.state.user)
+    // }
 
     handleToggleCreateForm = () => {
         this.setState((state) => {
@@ -76,10 +101,20 @@ export default class users extends Component {
         copiedUser[event.target.name] = event.target.value
 
         this.setState({ newUser: copiedUser })
+    }
 
-
+    handleSelectUser = (event) => {
+        console.log(event.target.value)
+        axios.get(`/api/users/${event.target.value}`)
+            .then((res) => {
+                this.setState({ currentUser: res.data })
+                console.log(this.state.currentUser)
+            })
 
     }
+
+
+
 
     /* Step 5
     *  The render function manages what is shown in the browser
@@ -88,6 +123,8 @@ export default class users extends Component {
     *
     */
     render() {
+        // let SingleUserComponent = () => <SingleUser currentUser={this.state.users} />
+
         let usersList = this.state.users.map((user) => {
             return (
                 <div>
@@ -96,6 +133,14 @@ export default class users extends Component {
                 </div>
             )
         })
+
+        // let users = this.state.users.map((user) => {
+        //     return (
+
+        //         <option key={user._id} value={user._id}>{user.firstName} {user.lastName} {user.pointsBalance} points</option>
+
+        //     )
+        // })
         return (
 
             this.state.isCreateFormDisplayed
@@ -198,11 +243,21 @@ export default class users extends Component {
                 </div>
                 :
                 <div>
-                    <div>
-                        <h3>{usersList}</h3>
-                    </div>
-
                     <button onClick={this.handleToggleCreateForm}>Add User</button>
+                    <p>Current User: {this.state.currentUser.firstName}</p>
+                    <h4>Select an existing user below</h4>
+
+                    {usersList}
+                    {/* <Switch>
+                        <Route exact path='/users/:userId/shop' render={SingleUserComponent} />
+                    </Switch> */}
+                    <form>
+                        {/* <select value={this.state.value} onChange={this.handleSelectUser}> */}
+                        {/* </select>
+                        <button onClick={this.handleSetUser}>View User</button> */}
+
+                    </form>
+
 
                 </div>
         )
