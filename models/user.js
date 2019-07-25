@@ -29,7 +29,10 @@ const UserSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  isAdmin: Boolean,
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
   pointsBalance: Number,
   userName: String,
   address: String,

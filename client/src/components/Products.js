@@ -121,7 +121,7 @@ export default class Products extends Component {
                             <Typography gutterBottom variant="h5" component="h2">
                                 {`${product.productName.substring(0, 20)}  `}
                             </Typography>
-                            <Typography gutterBottom variant="h6" component="h2">
+                            <Typography gutterBottom variant="h7" component="h2">
                                 {product.pointsRequired} points
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
@@ -130,7 +130,7 @@ export default class Products extends Component {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-
+                        <Button style={{  width: "300px"}}>Buy</Button>
                     </CardActions>
                 </Card>
 
@@ -220,7 +220,7 @@ export default class Products extends Component {
                             onChange={this.handleInputCreate}
                             value={this.state.newProduct.category}
                         />
-                        <input type="submit" value="Add Product" />
+                        <input type="submit" value="Save Changes" />
                     </form>
                     <button onClick={this.handleToggleCreateForm}>Cancel</button>
                 </div >

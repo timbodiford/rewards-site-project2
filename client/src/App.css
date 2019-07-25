@@ -46,6 +46,9 @@
   margin: 15px;
 }
 
+.card-image {
+width: 300px;
+}
 
 .img-name {
 flex-direction: row;

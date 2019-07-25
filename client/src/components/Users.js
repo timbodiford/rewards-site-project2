@@ -7,6 +7,20 @@ import { Link } from 'react-router-dom'
 import ShopView from './ShopView';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import SingleUser from './SingleUser';
+import Button from '@material-ui/core/Button';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import FilledInput from '@material-ui/core/FilledInput';
+import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
 
 
 
@@ -26,7 +40,7 @@ export default class users extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            isAdmin: '',
+            isAdmin: false,
             pointsBalance: '',
             userName: '',
             address: '',
@@ -147,94 +161,118 @@ export default class users extends Component {
                 ?
                 <div>
                     <form onSubmit={this.handleCreate}>
-                        <label htmlFor="firstName">First Name</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="firstName"
+                            label="First Name"
                             name="firstName"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.firstName}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor="lastName">Last Name</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="lastName"
+                            label="Last Name"
                             name="lastName"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.lastName}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor='email'>Email Address</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="email"
+                            label="Email Address"
                             name="email"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.email}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor='isAdmin'>Admin User?</label>
-                        <input
-                            type="text"
+                        {/* <TextField
                             id="isAdmin"
+                            label="Admin User?"
                             name="isAdmin"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.isAdmin}
-                        />
+                            margin="normal"
+                            variant="outlined"
+                        /> */}
+                        <FormControl >
+                            <InputLabel htmlFor="age-simple">Is Admin?</InputLabel>
+                            <Select
+                                value={this.state.newUser.isAdmin || false}
+                                onChange={this.handleInputCreate}
+                                inputProps={{
+                                    name: 'isAdmin',
+                                    id: 'age-simple',
+                                }}
+                            >
+                                <MenuItem value={true}>Yes</MenuItem>
+                                <MenuItem value={false}>No</MenuItem>
+                            </Select>
+                        </FormControl>
 
-                        <label htmlFor='pointsBalance'>Points pointsBalance</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="pointsBalance"
+                            label="Points Balance"
                             name="pointsBalance"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.pointsBalance}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor='userName'>User Name</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="userName"
+                            label="User Name"
                             name="userName"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.userName}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor='address'>Address</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="address"
+                            label="Address"
                             name="address"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.address}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor='city'>City</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="city"
+                            label="City"
                             name="city"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.city}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor='state'>state</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="state"
+                            label="State"
                             name="state"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.state}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor='zip'>Zip Code</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="zip"
+                            label="Zip Code"
                             name="zip"
                             onChange={this.handleInputCreate}
                             value={this.state.newUser.zip}
+                            margin="normal"
+                            variant="outlined"
                         />
                         <input type="submit" value="Add User" />
 
@@ -243,7 +281,8 @@ export default class users extends Component {
                 </div>
                 :
                 <div>
-                    <button onClick={this.handleToggleCreateForm}>Add User</button>
+                    <Button onClick={this.handleToggleCreateForm}>Add New User</Button>
+                    {/* <button onClick={this.handleToggleCreateForm}>Add User</button> */}
                     <p>Current User: {this.state.currentUser.firstName}</p>
                     <h4>Select an existing user below</h4>
 
