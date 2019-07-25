@@ -6,7 +6,6 @@ import Header from './components/Header';
 import SingleUser from './components/SingleUser';
 import Products from './components/Products'
 import SingleProduct from './components/SingleProduct'
-import ShopViewComponent from './components/ShopView'
 
 
 function App() {
@@ -15,7 +14,9 @@ function App() {
 
 
       <Router>
-        <Header />
+        <div className="header-wrapper">
+          <Header />
+        </div>
         <Switch>
           <Route exact path="/" component={Users} />
           <Route exact path="/users/:userId" component={SingleUser} />

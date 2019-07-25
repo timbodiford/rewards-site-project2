@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
 
 
 export default class SingleUser extends Component {
+
 
     state = {
         user: {},
@@ -172,18 +174,18 @@ export default class SingleUser extends Component {
                     <h5>{this.state.user.firstName}</h5>
                     <h5>{this.state.user.lastName}</h5>
 
-                    <button onClick={this.handleToggleEditForm}>Edit User</button>
-                    <button onClick={this.handleDelete}>Delete User</button>
+                    <Button variant="contained" onClick={this.handleToggleEditForm}>Edit User</Button>
+                    <Button variant="contained" onClick={this.handleDelete}>Delete User</Button>
 
-                    <Link to='/users/:userId/shop'>
-                        <button type="button">Shop</button>
-                    </Link>
+                    {/* <Link to='/users/:userId/shop'> */}
+                        <Button variant="contained" type="button" href='#'>Shop</Button>
+                    {/* </Link> */}
 
 
 
-                    <Link to='/'>
-                        <button type="button">Back to Users</button>
-                    </Link>
+                    {/* <Link to='/'> */}
+                        <Button variant="contained" type="button" href='/'>Back to Users</Button>
+                    {/* </Link> */}
                 </div>
         )
     }

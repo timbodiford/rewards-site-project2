@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import { Hidden } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+
 
 
 export default class Products extends Component {
@@ -55,24 +68,106 @@ export default class Products extends Component {
 
     render() {
 
+
+
+
+
+
         let productsList = this.state.products.map((product) => {
             return (
-                <div>
-                    <p>{product.productName}</p>
-                    <p>{product.pointsRequired} points</p>
-                    <Link
-                        key={product._id}
-                        to={`/products/${product._id}`}
-                    >   
-                        {
-                            <img src={product.productImage} width='150'></img>
-                            // ${product.productName}
-                        }
-                    </Link>
-                </div>
-            )
-        })
+                // <Card >
+                //     <CardActionArea>
+                //         <CardMedia
+                //             image={product.productImage}
+                //             title="Product Image"
+                //         />
+                //         <CardContent>
+                //             <Typography gutterBottom variant="h5" component="h2">
+                //                 {product.productName}
+                //             </Typography>
+                //             <Typography variant="body2" color="textSecondary" component="p">
+                //                 {product.productDescription}
+                //             </Typography>
+                //         </CardContent>
+                //     </CardActionArea>
+                //     <CardActions>
+                //         <Button size="small" color="primary">
+                //             Share
+                //         </Button>
+                //         <Button size="small" color="primary">
+                //             Learn More
+                //         </Button>
+                //     </CardActions>
+                // </Card >
 
+                <Card style={{ width: 250, height: 400, margin: 8 }}>
+                    <CardActionArea>
+                        
+                    <Link key={product._id} to={`/products/${product._id}`}>
+                            {
+                                <img src={product.productImage} height='150'></img>
+                            }
+                        </Link>
+                        {/* <CardMedia
+                            component="img"
+                            alt="Product Image"
+                            // width="150 px"
+                            height="140"
+                            image={product.productImage}
+                            title="Product Image"
+
+                        /> */}
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {`${product.productName.substring(0, 20)}  `}
+                            </Typography>
+                            <Typography gutterBottom variant="h6" component="h2">
+                                {product.pointsRequired} points
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {`${product.productDescription.substring(0, 100)} ...`}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+
+                    </CardActions>
+                </Card>
+
+
+
+                // <Paper style={{ width: "250px", height: "320px", overflow: "hidden", margin: "8px" }} >
+                //     <Grid container spacing={2}>
+                //         <Grid item>
+                // <Link
+                //     key={product._id}
+                //     to={`/products/${product._id}`}
+                // >
+                //     {
+                //         <img src={product.productImage} width='150'></img>
+                //     }
+                // </Link>
+                //         </Grid>
+                //         <Grid item xs={12} sm container>
+                //             <Grid item xs container direction="column" spacing={2}>
+                //                 <Grid item xs>
+                //                     <Typography gutterBottom variant="subtitle1">
+                //                         {product.productName}
+                //                     </Typography>
+                //                     <Typography variant="body2" color="textSecondary">
+                //                         {product.productDescription}
+                //                     </Typography>
+                //                 </Grid>
+                //             </Grid>
+                //             <Grid item>
+                //                 <Typography variant="subtitle1">{product.pointsRequired} pointsRequired</Typography>
+                //             </Grid>
+                //         </Grid>
+                //     </Grid>
+                // </Paper>
+
+                )
+        })
 
 
         return (
@@ -128,17 +223,21 @@ export default class Products extends Component {
                         <input type="submit" value="Add Product" />
                     </form>
                     <button onClick={this.handleToggleCreateForm}>Cancel</button>
-                </div>
+                </div >
                 :
                 <div>
 
 
+                    <Button onClick={this.handleToggleCreateForm}>Add New Product</Button>
 
-                    <div>{productsList}</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{productsList}</div>
 
-                    <button onClick={this.handleToggleCreateForm}>Add New Product</button>
 
                 </div>
         )
     }
 }
+
+
+
+
