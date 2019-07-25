@@ -32,14 +32,26 @@
   }
 }
 
-.header-wrapper {
+.header-wrapper{
   display: flex;
   justify-items: right;
   border-bottom: 2px;
-
+  flex-direction: row;
 }
 
-.navitems {
+.header{
+  display: flex;
+  flex-wrap: wrap;
   font-size: 22px;
-  justify-content: right;
+  margin: 15px;
 }
+
+
+.img-name {
+flex-direction: row;
+display: flex;
+/* padding: 20px; */
+}
+
+
+
