@@ -12,10 +12,13 @@ import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import blue from '@material-ui/core/colors/blue';
+
 
 
 export default class Header extends Component {
     render() {
+        const color = blue.A200
         return (
             <div className="header">
                 <div class="navwrapper">
@@ -27,17 +30,22 @@ export default class Header extends Component {
                     </div>
                 </div>
                 <div class="navcontainer">
-                    <Grid container spacing={4}>
+                    {/* <Grid container spacing={4}>
 
                         <Grid style={{ margin: 20}} item xs={12}>
                             <ButtonGroup variant="contained" color="primary" fullWidth aria-label="full width outlined button group" >
-                                <Button href="/">Users</Button>
+                                <Button className="button" href="/">Users</Button>
                                 <Button href="/products">Products</Button>
                                 <Button >TBD</Button>
 
                             </ButtonGroup>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
+                    <div class="navmenu" style={{width: '100vw'}}>
+                    <Button style={{width: 250, color: 'white'}} href="/">Users</Button>
+                    <Button style={{width: 250, color: 'white'}} href="/products">Products</Button>
+                    <Button style={{width: 250, color: 'white'}} href="/products">TBD</Button>
+                    </div>
                 </div>
 
             </div>

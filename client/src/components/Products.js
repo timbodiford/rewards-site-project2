@@ -129,7 +129,7 @@ export default class Products extends Component {
                             <Typography gutterBottom variant="h5" component="h2">
                                 {`${product.productName.substring(0, 20)}  `}
                             </Typography>
-                            <Typography gutterBottom variant="h7" component="h2">
+                            <Typography gutterBottom variant="h6" component="h2">
                                 {product.pointsRequired} points
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">

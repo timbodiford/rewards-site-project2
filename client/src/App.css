@@ -87,12 +87,21 @@ body {
 
 .testwrapper {
 display: flex;
-
 }
-///
 
 
 .navcontainer {
 display: flex;
+justify-content: center;
 }
 
+
+
+
+.navmenu {
+  background-color: #448aff;
+
+}
+
+.MuiButton-containedPrimary {
+}

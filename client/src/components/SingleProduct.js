@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+
 
 
 export default class SingleProduct extends Component {
@@ -112,7 +114,7 @@ export default class SingleProduct extends Component {
                     />
                     <input type="submit" value="Add Product" />
 
-                    <button onClick={this.handleToggleEditForm}>Cancel</button>
+                    <Button onClick={this.handleToggleEditForm}>Cancel</Button>
                 </form>
                 :
                 <div>
@@ -123,8 +125,8 @@ export default class SingleProduct extends Component {
                     <p>{this.state.product.pointsRequired} points required</p>
                     <img src={this.state.product.productImage} width='150' alt='img'></img>
 
-                    <button onClick={this.handleToggleEditForm}>Edit Product</button>
-                    <button onClick={this.handleDelete}>Delete Product</button>
+                    <Button onClick={this.handleToggleEditForm}>Edit Product</Button>
+                    <Button onClick={this.handleDelete}>Delete Product</Button>
 
 
 
