@@ -13,6 +13,14 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import FilledInput from '@material-ui/core/FilledInput';
+import InputLabel from '@material-ui/core/InputLabel';
 
 
 
@@ -102,8 +110,8 @@ export default class Products extends Component {
 
                 <Card style={{ width: 250, height: 400, margin: 8 }} >
                     <CardActionArea>
-                        
-                    <Link key={product._id} to={`/products/${product._id}`}>
+
+                        <Link key={product._id} to={`/products/${product._id}`}>
                             {
                                 <img src={product.productImage} height='150'></img>
                             }
@@ -130,7 +138,7 @@ export default class Products extends Component {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button style={{  width: "300px"}}>Buy</Button>
+                        <Button style={{ width: "300px" }}>Buy</Button>
                     </CardActions>
                 </Card>
 
@@ -166,7 +174,7 @@ export default class Products extends Component {
                 //     </Grid>
                 // </Paper>
 
-                )
+            )
         })
 
 
@@ -174,55 +182,62 @@ export default class Products extends Component {
             this.state.isCreateFormDisplayed
                 ?
                 <div>
-                    <form onSubmit={this.handleCreate}>
+                    <form id="addproduct" onSubmit={this.handleCreate}>
 
-                        <label htmlFor="productName">Product Name</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="productName"
+                            label="Product Name"
                             name="productName"
                             onChange={this.handleInputCreate}
                             value={this.state.newProduct.productName}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor="productDescription">Product Description</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="productDescription"
+                            label="Product Description"
                             name="productDescription"
                             onChange={this.handleInputCreate}
                             value={this.state.newProduct.productDescription}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor="pointsRequired">Points Required</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="pointsRequired"
+                            label="Points Required"
                             name="pointsRequired"
                             onChange={this.handleInputCreate}
                             value={this.state.newProduct.pointsRequired}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor="productImage">Product Image</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="productImage"
                             name="productImage"
+                            label="Image Link"
                             onChange={this.handleInputCreate}
                             value={this.state.newProduct.productImage}
+                            margin="normal"
+                            variant="outlined"
                         />
 
-                        <label htmlFor="category">Category</label>
-                        <input
-                            type="text"
+                        <TextField
                             id="category"
                             name="category"
+                            label="Category"
                             onChange={this.handleInputCreate}
                             value={this.state.newProduct.category}
+                            margin="normal"
+                            variant="outlined"
                         />
-                        <input type="submit" value="Save Changes" />
                     </form>
-                    <button onClick={this.handleToggleCreateForm}>Cancel</button>
+                    <div className="form-buttons">
+                        <Button type="submit" form="addproduct">Add Product</Button>
+                        <Button onClick={this.handleToggleCreateForm}>Cancel</Button>
+                    </div>
                 </div >
                 :
                 <div>
