@@ -18,25 +18,35 @@ export default class Header extends Component {
     render() {
         return (
             <div className="header">
-                <div>
-                    <img width="300 px" src="https://icm.aexp-static.com/Internet/Acquisition/US_en/AppContent/OneSite/category/cardarts/gold-delta-skymiles.png" />
+                <div class="navwrapper">
+                    <div>
+                        <img width="300 px" src="https://icm.aexp-static.com/Internet/Acquisition/US_en/AppContent/OneSite/category/cardarts/gold-delta-skymiles.png" />
+                    </div>
+                    <div>
+                        <h1>Rewards Site</h1>
+                    </div>
                 </div>
-                <div margin="30 px">
-                    <h1>Rewards Site</h1>
-                </div>
+                <div class="navcontainer">
+                    <Grid container spacing={4}>
 
-                <Grid container spacing={4}>
+                        <Grid style={{ margin: 20}} item xs={12}>
+                            <ButtonGroup variant="contained" color="primary" fullWidth aria-label="full width outlined button group" >
+                                <Button href="/">Users</Button>
+                                <Button href="/products">Products</Button>
+                                <Button >TBD</Button>
 
-                    <Grid style={{ margin: 20 }} item xs={12}>
-                        <ButtonGroup variant="contained" color="primary" fullWidth aria-label="full width outlined button group">
-                            <Button href="/">Users</Button>
-                            <Button href="/products">Products</Button>
-                            <Button >TBD</Button>
-
-                        </ButtonGroup>
+                            </ButtonGroup>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </div>
+
             </div>
+
+
+
+
+
+
         )
     }
 }

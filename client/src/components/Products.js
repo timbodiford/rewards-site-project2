@@ -100,7 +100,7 @@ export default class Products extends Component {
                 //     </CardActions>
                 // </Card >
 
-                <Card style={{ width: 250, height: 400, margin: 8 }}>
+                <Card style={{ width: 250, height: 400, margin: 8 }} >
                     <CardActionArea>
                         
                     <Link key={product._id} to={`/products/${product._id}`}>

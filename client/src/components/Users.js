@@ -160,7 +160,7 @@ export default class users extends Component {
             this.state.isCreateFormDisplayed
                 ?
                 <div>
-                    <form onSubmit={this.handleCreate}>
+                    <form id="adduser" onSubmit={this.handleCreate}>
                         <TextField
                             id="firstName"
                             label="First Name"
@@ -201,7 +201,7 @@ export default class users extends Component {
                             variant="outlined"
                         /> */}
                         <FormControl >
-                            <InputLabel htmlFor="age-simple">Is Admin?</InputLabel>
+                            <InputLabel htmlFor="isAdmin" className="isadmin">Is Admin?</InputLabel>
                             <Select
                                 value={this.state.newUser.isAdmin || false}
                                 onChange={this.handleInputCreate}
@@ -274,10 +274,15 @@ export default class users extends Component {
                             margin="normal"
                             variant="outlined"
                         />
-                        <input type="submit" value="Add User" />
 
                     </form>
-                    <button onClick={this.handleToggleCreateForm}>Cancel</button>
+                    <div className= "form-buttons">
+                    {/* <input type="button" value="Add User"
+                        onClick="document.adduser.submit();"
+                    /> */}
+                    <Button type="submit" form="adduser">Add User</Button>
+                    <Button onClick={this.handleToggleCreateForm}>Cancel</Button>
+                    </div>
                 </div>
                 :
                 <div>
