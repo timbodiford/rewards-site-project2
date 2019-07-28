@@ -20,6 +20,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Avatar from '@material-ui/core/Avatar';
+
 
 
 
@@ -142,19 +144,19 @@ export default class users extends Component {
         let usersList = this.state.users.map((user) => {
             return (
                 <div>
-                    <Link key={user._id} to={`/users/${user._id}`}>{`${user.firstName} ${user.lastName}`}</Link>
+                    <Link key={user._id} to={`/users/${user._id}`}> {`${user.firstName} ${user.lastName}`}</Link>
                     <p>{user.pointsBalance} Available Points</p>
                 </div>
             )
         })
 
-        // let users = this.state.users.map((user) => {
-        //     return (
+        let users = this.state.users.map((user) => {
+            return (
 
-        //         <option key={user._id} value={user._id}>{user.firstName} {user.lastName} {user.pointsBalance} points</option>
+                <option key={user._id} value={user._id}>{user.firstName} {user.lastName} {user.pointsBalance} points</option>
 
-        //     )
-        // })
+            )
+        })
         return (
 
             this.state.isCreateFormDisplayed
@@ -291,14 +293,12 @@ export default class users extends Component {
                     <p>Current User: {this.state.currentUser.firstName}</p>
                     <h4>Select an existing user below</h4>
 
-                    {usersList}
-                    {/* <Switch>
-                        <Route exact path='/users/:userId/shop' render={SingleUserComponent} />
-                    </Switch> */}
+
                     <form>
-                        {/* <select value={this.state.value} onChange={this.handleSelectUser}> */}
-                        {/* </select>
-                        <button onClick={this.handleSetUser}>View User</button> */}
+                        <select value={this.state.value} onChange={this.handleSelectUser}>
+                    {users}
+                        </select>
+                        <button onClick={this.handleSetUser}>View User</button>
 
                     </form>
 
