@@ -29,6 +29,10 @@ export default class Products extends Component {
         this.getAllProducts()
     }
 
+     refreshPage() {
+        window.location.reload(false);
+      }
+
     getAllProducts() {
         axios.get('/api/products')
             .then((res) => {
@@ -50,6 +54,8 @@ export default class Products extends Component {
             .then((res) => {
                 this.setState({ isCreateFormDisplayed: false })
                 this.getAllProducts()
+                this.refreshPage()
+
             })
     }
 
@@ -71,9 +77,9 @@ export default class Products extends Component {
 
         let productsList = this.state.products.map((product) => {
             return (
-            
 
-                <Card style={{ width: 250, height: 400, margin: 8 }} >
+
+                <Card key={product._id} style={{ width: 250, height: 400, margin: 8 }} >
                     <CardActionArea>
 
                         <Link key={product._id} to={`/products/${product._id}`}>

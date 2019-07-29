@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+
 
 
 export default class SingleUser extends Component {
@@ -30,6 +27,10 @@ export default class SingleUser extends Component {
             })
         console.log(this.state.user)
     }
+
+    refreshPage() {
+        window.location.reload(false);
+      }
 
     handleToggleEditForm = () => {
         this.setState((state) => {

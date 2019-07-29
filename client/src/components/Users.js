@@ -103,20 +103,20 @@ export default class users extends Component {
 
         let usersList = this.state.users.map((user) => {
             return (
-                <div>
+                <div key={user._id}>
                     <Link key={user._id} to={`/users/${user._id}`}> {`${user.firstName} ${user.lastName}`}</Link>
                     <p>{user.pointsBalance} Available Points</p>
                 </div>
             )
         })
 
-        let users = this.state.users.map((user) => {
-            return (
+        // let users = this.state.users.map((user) => {
+        //     return (
 
-                <option key={user._id} value={user._id}>{user.firstName} {user.lastName} {user.pointsBalance} points</option>
+        //         <option key={user._id} value={user._id}>{user.firstName} {user.lastName} {user.pointsBalance} points</option>
 
-            )
-        })
+        //     )
+        // })
         return (
 
             this.state.isCreateFormDisplayed

@@ -4,7 +4,7 @@ SEI 22 Project 3
 
 
 Heroku Link
-  * TBD
+  * https://blooming-beach-69588.herokuapp.com/
   
 Trello Link
   * https://trello.com/b/ATArBDD4/rewards-site-project-3
@@ -20,7 +20,7 @@ Trello Link
 
 
 ## Wireframes
-![Edit Form](https://github.com/timbodiford/rewards-site-project2/blob/master/wireframes/Edit%20User%20Form.png)
+![Edit Form](https://github.com/timbodiford/rewards-site-project2/blob/master/P3%20ERD.png)
 
 ![Users Form](https://github.com/timbodiford/rewards-site-project2/blob/master/wireframes/MVP%20-%20Landing%20Page%20copy.png)
 
