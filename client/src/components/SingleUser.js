@@ -177,15 +177,11 @@ export default class SingleUser extends Component {
                     <Button variant="contained" onClick={this.handleToggleEditForm}>Edit User</Button>
                     <Button variant="contained" onClick={this.handleDelete}>Delete User</Button>
 
-                    {/* <Link to='/users/:userId/shop'> */}
                     <Button variant="contained" type="button" href='#'>Shop</Button>
-                    {/* </Link> */}
 
 
 
-                    {/* <Link to='/'> */}
                     <Button variant="contained" type="button" href='/'>Back to Users</Button>
-                    {/* </Link> */}
                 </div>
         )
     }

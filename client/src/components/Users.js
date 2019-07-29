@@ -1,41 +1,21 @@
-/* Step 1 import React, { Component } and axios
- *
- */
+
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-// import ShopView from './ShopView';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-// import SingleUser from './SingleUser';
 import Button from '@material-ui/core/Button';
-// import clsx from 'clsx';
-// import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-// import Input from '@material-ui/core/Input';
-// import OutlinedInput from '@material-ui/core/OutlinedInput';
-// import FilledInput from '@material-ui/core/FilledInput';
 import InputLabel from '@material-ui/core/InputLabel';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-// import Avatar from '@material-ui/core/Avatar';
 
 
 
 
 
-/* Step 2
- * Rename this class to reflect the component being created
- *
- */
+
 export default class users extends Component {
 
-    /* Step 3
-    * Create a state for the component to store view data
-    *
-    */
     state = {
         users: [],
         newUser: {
@@ -67,13 +47,7 @@ export default class users extends Component {
     }
 
 
-    /* Step 4
-    * Use componentDidMount to retrieve any data to display
-    *   Here you can make calls to your local express server
-    *   or to an external API
-    *   setState can be run here as well
-    *   -REMINDER remember `setState` it is an async function
-    */
+
     componentDidMount() {
 
         this.getAllUsers()
@@ -86,13 +60,6 @@ export default class users extends Component {
                 this.setState({ users: res.data })
             })
     }
-    // getUser() {
-    //     axios.get(`/api/users/${this.props.match.params.userId}`)
-    //         .then((res) => {
-    //             this.setState({ user: res.data })
-    //         })
-    //     console.log(this.state.user)
-    // }
 
     handleToggleCreateForm = () => {
         this.setState((state) => {
@@ -132,14 +99,7 @@ export default class users extends Component {
 
 
 
-    /* Step 5
-    *  The render function manages what is shown in the browser
-    *  TODO: delete the jsx returned
-    *   and replace it with your own custom jsx template
-    *
-    */
     render() {
-        // let SingleUserComponent = () => <SingleUser currentUser={this.state.users} />
 
         let usersList = this.state.users.map((user) => {
             return (
@@ -193,15 +153,7 @@ export default class users extends Component {
                             variant="outlined"
                         />
 
-                        {/* <TextField
-                            id="isAdmin"
-                            label="Admin User?"
-                            name="isAdmin"
-                            onChange={this.handleInputCreate}
-                            value={this.state.newUser.isAdmin}
-                            margin="normal"
-                            variant="outlined"
-                        /> */}
+
                         <FormControl >
                             <InputLabel htmlFor="isAdmin" className="isadmin">Is Admin?</InputLabel>
                             <Select
@@ -279,9 +231,7 @@ export default class users extends Component {
 
                     </form>
                     <div className="form-buttons">
-                        {/* <input type="button" value="Add User"
-                        onClick="document.adduser.submit();"
-                    /> */}
+
                         <Button type="submit" form="adduser">Add User</Button>
                         <Button onClick={this.handleToggleCreateForm}>Cancel</Button>
                     </div>
@@ -289,7 +239,6 @@ export default class users extends Component {
                 :
                 <div>
                     <Button onClick={this.handleToggleCreateForm}>Add New User</Button>
-                    {/* <button onClick={this.handleToggleCreateForm}>Add User</button> */}
                     <p>Welcome: {this.state.currentUser.firstName}!</p>
                     <p>You have {this.state.currentUser.pointsBalance} points.</p>
                     <h4>Select an existing user below</h4>
