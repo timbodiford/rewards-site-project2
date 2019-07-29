@@ -53,8 +53,9 @@ export default class Products extends Component {
         axios.post('/api/products', this.state.newProduct)
             .then((res) => {
                 this.setState({ isCreateFormDisplayed: false })
+                this.setState({newproduct: {} })
                 this.getAllProducts()
-                this.refreshPage()
+                // this.refreshPage()
 
             })
     }
