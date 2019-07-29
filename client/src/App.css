@@ -85,6 +85,9 @@ body {
 .footer {
   flex-shrink: 0;
   padding: 20px;
+  background-color: #03396c;
+  color: white;
+
 }
 
 .testwrapper {
@@ -97,13 +100,26 @@ display: flex;
 justify-content: center;
 }
 
-
+aside {
+  text-align: right;
+  float: right;
+}
 
 
 .navmenu {
-  background-color: #448aff;
+  background-color: #03396c;
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.product-list {
+  color: lightgrey;
 }
 
 .MuiButton-containedPrimary {
+}
+
+a {
+  text-decoration: none;
+
 }

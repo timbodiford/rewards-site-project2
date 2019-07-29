@@ -4,23 +4,23 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import ShopView from './ShopView';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import SingleUser from './SingleUser';
+// import ShopView from './ShopView';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+// import SingleUser from './SingleUser';
 import Button from '@material-ui/core/Button';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+// import clsx from 'clsx';
+// import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import FilledInput from '@material-ui/core/FilledInput';
+// import Input from '@material-ui/core/Input';
+// import OutlinedInput from '@material-ui/core/OutlinedInput';
+// import FilledInput from '@material-ui/core/FilledInput';
 import InputLabel from '@material-ui/core/InputLabel';
 // import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 
 
 
@@ -278,30 +278,32 @@ export default class users extends Component {
                         />
 
                     </form>
-                    <div className= "form-buttons">
-                    {/* <input type="button" value="Add User"
+                    <div className="form-buttons">
+                        {/* <input type="button" value="Add User"
                         onClick="document.adduser.submit();"
                     /> */}
-                    <Button type="submit" form="adduser">Add User</Button>
-                    <Button onClick={this.handleToggleCreateForm}>Cancel</Button>
+                        <Button type="submit" form="adduser">Add User</Button>
+                        <Button onClick={this.handleToggleCreateForm}>Cancel</Button>
                     </div>
                 </div>
                 :
                 <div>
                     <Button onClick={this.handleToggleCreateForm}>Add New User</Button>
                     {/* <button onClick={this.handleToggleCreateForm}>Add User</button> */}
-                    <p>Current User: {this.state.currentUser.firstName}</p>
+                    <p>Welcome: {this.state.currentUser.firstName}!</p>
+                    <p>You have {this.state.currentUser.pointsBalance} points.</p>
                     <h4>Select an existing user below</h4>
 
 
                     <form>
                         <select value={this.state.value} onChange={this.handleSelectUser}>
-                    {users}
+                            {users}
                         </select>
-                        <button onClick={this.handleSetUser}>View User</button>
+                        {/* <button onClick={this.currentUser}>View User</button> */}
 
                     </form>
-
+                    <Button key={this.state.currentUser._id} to={`/users/${this.state.currentUser._id}`}>Edit User</Button>
+                    {usersList}
 
                 </div>
         )

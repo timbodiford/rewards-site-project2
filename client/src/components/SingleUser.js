@@ -49,15 +49,15 @@ export default class SingleUser extends Component {
         const copiedUser = { ...this.state.user }
         copiedUser[event.target.name] = event.target.value
 
-        this.setState({ user: copiedUser})
+        this.setState({ user: copiedUser })
     }
 
     handleDelete = () => {
         axios.delete(`/api/users/${this.state.user._id}`)
-        .then(() => {
-            this.setState({redirectToHome: true})
+            .then(() => {
+                this.setState({ redirectToHome: true })
 
-        })
+            })
     }
 
 
@@ -69,7 +69,7 @@ export default class SingleUser extends Component {
         return (
             this.state.isEditFormDisplayed
                 ?
-            
+
                 <form onSubmit={this.handleEdit}>
                     <label htmlFor="firstName">First Name</label>
                     <input
@@ -167,7 +167,7 @@ export default class SingleUser extends Component {
 
 
 
-            :
+                :
                 <div>
                     <p>Individual User should show here:</p>
 
@@ -178,13 +178,13 @@ export default class SingleUser extends Component {
                     <Button variant="contained" onClick={this.handleDelete}>Delete User</Button>
 
                     {/* <Link to='/users/:userId/shop'> */}
-                        <Button variant="contained" type="button" href='#'>Shop</Button>
+                    <Button variant="contained" type="button" href='#'>Shop</Button>
                     {/* </Link> */}
 
 
 
                     {/* <Link to='/'> */}
-                        <Button variant="contained" type="button" href='/'>Back to Users</Button>
+                    <Button variant="contained" type="button" href='/'>Back to Users</Button>
                     {/* </Link> */}
                 </div>
         )

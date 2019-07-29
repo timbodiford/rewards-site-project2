@@ -1,26 +1,27 @@
 import React, { Component } from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+// import Grid from '@material-ui/core/Grid';
+// import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import { Hidden } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+// import ButtonBase from '@material-ui/core/ButtonBase';
+// import { Hidden } from '@material-ui/core';
+// import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+// import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import FilledInput from '@material-ui/core/FilledInput';
-import InputLabel from '@material-ui/core/InputLabel';
+// import Input from '@material-ui/core/Input';
+// import OutlinedInput from '@material-ui/core/OutlinedInput';
+// import FilledInput from '@material-ui/core/FilledInput';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import { blue } from '@material-ui/core/colors';
 
 
 
@@ -113,7 +114,7 @@ export default class Products extends Component {
 
                         <Link key={product._id} to={`/products/${product._id}`}>
                             {
-                                <img src={product.productImage} height='150'></img>
+                                <img src={product.productImage} height='150' alt="#"></img>
                             }
                         </Link>
                         {/* <CardMedia
@@ -240,12 +241,12 @@ export default class Products extends Component {
                     </div>
                 </div >
                 :
-                <div>
+                <div >
 
 
                     <Button onClick={this.handleToggleCreateForm}>Add New Product</Button>
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{productsList}</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', backgroundColor: '#6497b1' }}>{productsList}</div>
 
 
                 </div>
