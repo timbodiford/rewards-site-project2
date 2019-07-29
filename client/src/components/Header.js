@@ -10,7 +10,7 @@ export default class Header extends Component {
             <div className="header">
                 <div className="navwrapper">
                     <div>
-                        <img width="300 px" alt="cardimage" src="http://a3papersize.org/wp-content/uploads/2018/09/credit-cards-numbers-1.png" />
+                        <img width="300 px" href='/' alt="cardimage" src="http://a3papersize.org/wp-content/uploads/2018/09/credit-cards-numbers-1.png" />
                     </div>
                     <div>
                         <h1>Rewards Site</h1>
