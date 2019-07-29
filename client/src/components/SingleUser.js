@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 
 export default class SingleUser extends Component {
@@ -69,101 +74,114 @@ export default class SingleUser extends Component {
         return (
             this.state.isEditFormDisplayed
                 ?
+                <div>
+                    <form id="editUser" onSubmit={this.handleEdit}>
+                        <TextField
+                            id="firstName"
+                            label="First Name"
+                            name="firstName"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.firstName}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                <form onSubmit={this.handleEdit}>
-                    <label htmlFor="firstName">First Name</label>
-                    <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.firstName}
-                    />
+                        <TextField
+                            id="lastName"
+                            label="Last Name"
+                            name="lastName"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.lastName}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor="lastName">Last Name</label>
-                    <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.lastName}
-                    />
+                        <TextField
+                            id="email"
+                            label="Email Address"
+                            name="email"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.email}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor='email'>Email Address</label>
-                    <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.email}
-                    />
+                        <TextField
+                            id="isAdmin"
+                            label="Is Admin User?"
+                            name="isAdmin"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.isAdmin}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor='isAdmin'>Admin User?</label>
-                    <input
-                        type="text"
-                        id="isAdmin"
-                        name="isAdmin"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.isAdmin}
-                    />
+                        <TextField
+                            id="pointsBalance"
+                            label="Points Balance"
+                            name="pointsBalance"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.pointsBalance}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor='pointsBalance'>Points pointsBalance</label>
-                    <input
-                        type="text"
-                        id="pointsBalance"
-                        name="pointsBalance"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.pointsBalance}
-                    />
+                        <TextField
+                            id="userName"
+                            label="User Name"
+                            name="userName"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.userName}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor='userName'>User Name</label>
-                    <input
-                        type="text"
-                        id="userName"
-                        name="userName"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.userName}
-                    />
+                        <TextField
+                            label="Address"
+                            id="address"
+                            name="address"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.address}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor='address'>Address</label>
-                    <input
-                        type="text"
-                        id="address"
-                        name="address"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.address}
-                    />
+                        <TextField
+                            id="city"
+                            label="City"
+                            name="city"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.city}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor='city'>City</label>
-                    <input
-                        type="text"
-                        id="city"
-                        name="city"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.city}
-                    />
+                        <TextField
+                            id="state"
+                            label="State"
+                            name="state"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.state}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor='state'>state</label>
-                    <input
-                        type="text"
-                        id="state"
-                        name="state"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.state}
-                    />
+                        <TextField
+                            id="zip"
+                            label="Zip Code"
+                            name="zip"
+                            onChange={this.handleInputEdit}
+                            value={this.state.user.zip}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </form>
+                    <div className="form-buttons">
 
-                    <label htmlFor='zip'>Zip Code</label>
-                    <input
-                        type="text"
-                        id="zip"
-                        name="zip"
-                        onChange={this.handleInputEdit}
-                        value={this.state.user.zip}
-                    />
-                    <input type="submit" value="Save Changes" />
-                    <button onClick={this.handleToggleEditForm}>Cancel</button>
-
-                </form>
+                        <Button type="submit" form="editUser">Save Changes</Button>
+                        <Button onClick={this.handleToggleEditForm}>Cancel</Button>
+                    </div>
+                </div>
 
 
 

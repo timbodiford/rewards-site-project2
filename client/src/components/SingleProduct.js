@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
 
 
 
@@ -67,73 +71,84 @@ export default class SingleProduct extends Component {
 
             this.state.isEditFormDisplayed
                 ?
-                <form onSubmit={this.handleEdit}>
-                    <label htmlFor="productName">Product Name</label>
-                    <input
-                        type="text"
-                        id="productName"
-                        name="productName"
-                        onChange={this.handleInputEdit}
-                        value={this.state.product.productName}
-                    />
+                <div>
+                    <form id="editProduct" onSubmit={this.handleEdit}>
+                        <TextField
+                            id="productName"
+                            label="Product Name"
+                            name="productName"
+                            onChange={this.handleInputEdit}
+                            value={this.state.product.productName}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor="productDescription">Product Description</label>
-                    <input
-                        type="text"
-                        id="productDescription"
-                        name="productDescription"
-                        onChange={this.handleInputEdit}
-                        value={this.state.product.productDescription}
-                    />
+                        <TextField
+                            id="productDescription"
+                            label="Product Description"
+                            name="productDescription"
+                            onChange={this.handleInputEdit}
+                            value={this.state.product.productDescription}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor="pointsRequired">Points Required</label>
-                    <input
-                        type="text"
-                        id="pointsRequired"
-                        name="pointsRequired"
-                        onChange={this.handleInputEdit}
-                        value={this.state.product.pointsRequired}
-                    />
+                        <TextField
+                            id="pointsRequired"
+                            label="Points Required"
+                            name="pointsRequired"
+                            onChange={this.handleInputEdit}
+                            value={this.state.product.pointsRequired}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor="productImage">Product Image</label>
-                    <input
-                        type="text"
-                        id="productImage"
-                        name="productImage"
-                        onChange={this.handleInputEdit}
-                        value={this.state.product.productImage}
-                    />
+                        <TextField
+                            id="productImage"
+                            label="Product Image"
+                            name="productImage"
+                            onChange={this.handleInputEdit}
+                            value={this.state.product.productImage}
+                            margin="normal"
+                            variant="outlined"
+                        />
 
-                    <label htmlFor="category">Category</label>
-                    <input
-                        type="text"
-                        id="category"
-                        name="category"
-                        onChange={this.handleInputEdit}
-                        value={this.state.product.category}
-                    />
-                    <input type="submit" value="Add Product" />
+                        <TextField
+                            id="category"
+                            label="Category"
+                            name="category"
+                            onChange={this.handleInputEdit}
+                            value={this.state.product.category}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </form>
+                    <div className="form-buttons">
 
-                    <Button onClick={this.handleToggleEditForm}>Cancel</Button>
-                </form>
+                        <Button variant="contained" type="submit" form="editProduct">Save Changes</Button>
+
+                        <Button variant="contained" onClick={this.handleToggleEditForm}>Cancel</Button>
+                    </div>
+                </div >
                 :
                 <div>
-                    <p>Individual Product should show here:</p>
+                    <div>
+                        <p>Individual Product should show here:</p>
 
-                    <h5>{this.state.product.productName}</h5>
-                    <p>{this.state.product.productDescription}</p>
-                    <p>{this.state.product.pointsRequired} points required</p>
-                    <img src={this.state.product.productImage} width='150' alt='img'></img>
+                        <h5>{this.state.product.productName}</h5>
+                        <p>{this.state.product.productDescription}</p>
+                        <p>{this.state.product.pointsRequired} points required</p>
+                        <img src={this.state.product.productImage} width='150' alt='img'></img>
 
-                    <Button onClick={this.handleToggleEditForm}>Edit Product</Button>
-                    <Button onClick={this.handleDelete}>Delete Product</Button>
+                    </div>
+                        <Button variant="contained" onClick={this.handleToggleEditForm}>Edit Product</Button>
+                        <Button variant="contained" onClick={this.handleDelete}>Delete Product</Button>
+                        <Button variant="contained" href='/products'>Back to Products</Button>
 
 
-
-
-                    <Link to='/products'>
+                    {/* <Link to='/products'>
                         <button type="button">Back to Products</button>
-                    </Link>
+                    </Link> */}
                 </div>
         )
     }
