@@ -20,11 +20,11 @@ Trello Link
 
 
 ## Wireframes
-![Edit Form](https://github.com/timbodiford/rewards-site-project2/blob/master/P3%20ERD.png)
+![Edit Form](https://github.com/timbodiford/rewards-site-project2/blob/master/Screen%20Shot%202019-07-29%20at%201.29.19%20PM.png)
 
-![Users Form](https://github.com/timbodiford/rewards-site-project2/blob/master/wireframes/MVP%20-%20Landing%20Page%20copy.png)
+![Users Form](https://github.com/timbodiford/rewards-site-project2/blob/master/Screen%20Shot%202019-07-29%20at%201.29.48%20PM.png)
 
-![Edit Form](https://github.com/timbodiford/rewards-site-project2/blob/master/wireframes/MVP%20-%20Product%20Page.png)
+![Products Form](https://github.com/timbodiford/rewards-site-project2/blob/master/Screen%20Shot%202019-07-29%20at%201.30.03%20PM.png)
 
 
 
