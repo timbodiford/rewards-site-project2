@@ -67,6 +67,7 @@ form {
 
 .form-buttons {
   padding: 0 0 150px 0;
+  margin: 50px;
 
 }
 
@@ -123,5 +124,14 @@ aside {
 
 a {
   text-decoration: none;
+}
+
+.top-buttons {
+  /* margin: 50px 0; */
+
+}
+
+.userslist {
+  margin: 50px 0;
 
 }

@@ -178,8 +178,8 @@ export default class SingleUser extends Component {
                     </form>
                     <div className="form-buttons">
 
-                        <Button type="submit" form="editUser">Save Changes</Button>
-                        <Button onClick={this.handleToggleEditForm}>Cancel</Button>
+                        <Button variant="contained" type="submit" form="editUser">Save Changes</Button>
+                        <Button variant="contained" onClick={this.handleToggleEditForm}>Cancel</Button>
                     </div>
                 </div>
 

@@ -162,15 +162,15 @@ export default class Products extends Component {
                         />
                     </form>
                     <div className="form-buttons">
-                        <Button type="submit" form="addproduct">Add Product</Button>
-                        <Button onClick={this.handleToggleCreateForm}>Cancel</Button>
+                        <Button variant="contained" type="submit" form="addproduct">Add Product</Button>
+                        <Button variant="contained" onClick={this.handleToggleCreateForm}>Cancel</Button>
                     </div>
                 </div >
                 :
                 <div >
 
 
-                    <Button onClick={this.handleToggleCreateForm}>Add New Product</Button>
+                    <Button variant="contained" onClick={this.handleToggleCreateForm}>Add New Product</Button>
 
                     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', backgroundColor: '#6497b1' }}>{productsList}</div>
 

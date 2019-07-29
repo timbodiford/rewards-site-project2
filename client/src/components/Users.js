@@ -232,14 +232,14 @@ export default class users extends Component {
                     </form>
                     <div className="form-buttons">
 
-                        <Button type="submit" form="adduser">Add User</Button>
-                        <Button onClick={this.handleToggleCreateForm}>Cancel</Button>
+                        <Button variant="contained" type="submit" form="adduser">Add User</Button>
+                        <Button variant="contained" onClick={this.handleToggleCreateForm}>Cancel</Button>
                     </div>
                 </div>
                 :
-                <div>
-                    <Button onClick={this.handleToggleCreateForm}>Add New User</Button>
-                    <p>Welcome: {this.state.currentUser.firstName}!</p>
+                <div className="top-buttons">
+                    <Button variant="contained" onClick={this.handleToggleCreateForm}>Add New User</Button>
+                    {/* <p>Welcome: {this.state.currentUser.firstName}!</p>
                     <p>You have {this.state.currentUser.pointsBalance} points.</p>
                     <h4>Select an existing user below</h4>
 
@@ -248,11 +248,14 @@ export default class users extends Component {
                         <select value={this.state.value} onChange={this.handleSelectUser}>
                             {users}
                         </select>
-                        {/* <button onClick={this.currentUser}>View User</button> */}
+                        <button onClick={this.currentUser}>View User</button>
 
-                    </form>
-                    <Button key={this.state.currentUser._id} to={`/users/${this.state.currentUser._id}`}>Edit User</Button>
+                    </form> */}
+                    {/* <Button variant="contained" key={this.state.currentUser._id} to={`/users/${this.state.currentUser._id}`}>Edit User</Button> */}
+                    
+                    <div className="userslist">
                     {usersList}
+                    </div>
 
                 </div>
         )
